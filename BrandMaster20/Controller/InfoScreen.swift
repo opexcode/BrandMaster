@@ -109,16 +109,16 @@ class InfoScreen: UITableViewController, MFMailComposeViewControllerDelegate {
 	}
 	
 	
-	/*
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toMarks" {
-			guard let vc = segue.destination as? PDFPreviewViewController else { return }
+			guard let vc = segue.destination as? PDFPreviewScreen else { return }
 			let pdfCreator = PDFCreator()
 			// Делаем shareButton неактивной иначе грохнется при нажатии на нее
 			vc.shareButton.isEnabled = false
 			vc.documentData = pdfCreator.marksViewer()
 		}
 	}
-	*/
+	
 
 }

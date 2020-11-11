@@ -1204,6 +1204,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pcY-TC-KGM" kind="show" identifier="toMarks" id="YXf-sr-LPX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="O6e-s8-2yR">
                                         <rect key="frame" x="0.0" y="61.5" width="414" height="43.5"/>
@@ -1349,7 +1352,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGJ-xU-iYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4052" y="694"/>
+            <point key="canvasLocation" x="3842" y="822"/>
         </scene>
         <!--Обязанности-->
         <scene sceneID="L8v-f7-xeZ">
@@ -1963,18 +1966,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dbD-hM-0ih">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UsA-Sc-LXn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UsA-Sc-LXn">
+                            <connections>
+                                <action selector="shareAction:" destination="pcY-TC-KGM" id="Qdm-cc-wqd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pdfView" destination="hn5-2U-qiz" id="ov3-sA-MBF"/>
+                        <outlet property="shareButton" destination="UsA-Sc-LXn" id="p6T-Jg-n1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGY-98-qma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1164" y="1779"/>
+            <point key="canvasLocation" x="265" y="2418"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YXf-sr-LPX"/>
         <segue reference="rkg-8y-Fyp"/>
     </inferredMetricsTieBreakers>
     <resources>

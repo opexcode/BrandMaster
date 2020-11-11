@@ -48,7 +48,7 @@ class MainScreen: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		Parameters.settings.loadDefaultSettings()
+//		Parameters.settings.loadDefaultSettings()
         Parameters.settings.loadSettings()
         setupStartScreen()
     }

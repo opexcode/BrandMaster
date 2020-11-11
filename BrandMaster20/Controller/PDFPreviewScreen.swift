@@ -36,12 +36,12 @@ class PDFPreviewScreen: UIViewController {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
 //		atencionMessage()
-//		AppDelegate.AppUtility.lockOrientation(.all)
+		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
-//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
 
 	
@@ -64,15 +64,18 @@ class PDFPreviewScreen: UIViewController {
 //	}
 //
 //
-//	@IBAction func shareAction(_ sender: UIBarButtonItem) {
-//        let pdfCreator = PDFCreator()
-//		var pdfData = Data()
-//		if  appData!.firePlace {
-//			pdfData = pdfCreator.createFound(appData: appData!)
-//		} else {
-//			pdfData = pdfCreator.createNotFound(appData: appData!)
-//		}
-//        let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
-//        present(vc, animated: true, completion: nil)
-//	}
+	@IBAction func shareAction(_ sender: UIBarButtonItem) {
+        let pdfCreator = PDFCreator()
+		var pdfData = Data()
+		
+		if  Parameters.shared.isFireFound {
+			pdfData = pdfCreator.createFound()
+		}
+		else {
+			pdfData = pdfCreator.createNotFound()
+		}
+		
+        let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
+	}
 }
